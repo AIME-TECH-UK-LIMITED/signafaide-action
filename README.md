@@ -21,10 +21,10 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-      - uses: AIME-TECH-UK-LIMITED/signafaide-action@v0.5.6
+      - uses: AIME-TECH-UK-LIMITED/signafaide-action@v0.5.7
 ```
 
-In production, pin the action to the full commit SHA of a release rather than the tag: `git ls-remote https://github.com/AIME-TECH-UK-LIMITED/signafaide-action refs/tags/v0.5.6` prints it.
+In production, pin the action to the full commit SHA of a release rather than the tag: `git ls-remote https://github.com/AIME-TECH-UK-LIMITED/signafaide-action refs/tags/v0.5.7` prints it.
 
 ## What it does
 
@@ -85,13 +85,13 @@ The `allow` input does the same for one workflow, without a reason (`allow: run_
 When a coding agent or an agent job runs in CI, the same action can record its tool calls and check them at the end of the job. Off by default.
 
 ```yaml
-      - uses: AIME-TECH-UK-LIMITED/signafaide-action@v0.5.6
+      - uses: AIME-TECH-UK-LIMITED/signafaide-action@v0.5.7
         with:
           check: false
           record-runs: start
           api-key: ${{ secrets.SIGNAFAIDE_API_KEY }}
       - run: npm run agent   # your agent, recording with the signafaide SDK or through signafaide gateway
-      - uses: AIME-TECH-UK-LIMITED/signafaide-action@v0.5.6
+      - uses: AIME-TECH-UK-LIMITED/signafaide-action@v0.5.7
         if: always()
         with:
           check: false
